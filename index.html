@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logoogle | Premium Brand Identity Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #3366FF;
+            --primary-purple: #663399;
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            --light-gray: #FAFAFA;
+            --medium-gray: #F0F0F0;
+            --dark-gray: #222222;
+            --text-dark: #111111;
+            --text-light: #666666;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --section-padding: 100px 0;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--primary-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Premium Professional Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--primary-white);
+            padding: 24px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-black);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Start Project Button */
+        .start-project-btn {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            border: none;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-radius: var(--border-radius);
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.3px;
+            margin-left: 20px;
+        }
+
+        .start-project-btn:hover {
+            background-color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--primary-black);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Brand Title Styling */
+        .brand-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 120px;
+            background-color: var(--primary-white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--primary-black);
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 0 40px 0;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            border: none;
+            padding: 16px 36px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: var(--border-radius);
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-blue);
+        }
+
+        /* Services Section */
+        .services {
+            padding: var(--section-padding);
+            background-color: var(--primary-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary-black);
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .service-card {
+            padding: 40px 32px;
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: var(--card-shadow);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            background-color: var(--primary-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-black);
+            border: 1px solid var(--medium-gray);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--primary-black);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: var(--section-padding);
+            background-color: var(--light-gray);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .project-card {
+            background-color: var(--primary-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            height: 320px;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary-blue);
+        }
+
+        .project-image {
+            height: 180px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Manrope', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-black);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-black);
+        }
+
+        .project-category {
+            font-size: 13px;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* CMP Process Section */
+        .cmp-process {
+            padding: var(--section-padding);
+            background-color: var(--primary-white);
+            position: relative;
+        }
+
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 100px;
+            right: 100px;
+            height: 1px;
+            background-color: var(--medium-gray);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 160px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--primary-white);
+            border: 2px solid var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            position: relative;
+            background-color: var(--primary-white);
+        }
+
+        .step-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-black);
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            padding: var(--section-padding);
+            background-color: var(--light-gray);
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .founder-image {
+            width: 400px;
+            height: 500px;
+            background-color: var(--medium-gray);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .founder-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .founder-text h2 {
+            font-size: 42px;
+            margin-bottom: 24px;
+            color: var(--primary-black);
+            line-height: 1.2;
+        }
+
+        .founder-text p {
+            font-size: 17px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .founder-signature {
+            margin-top: 32px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-black);
+        }
+
+        .founder-signature span {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-top: 6px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            background-color: var(--primary-white);
+            text-align: left;
+        }
+
+        .contact-header {
+            max-width: 800px;
+            margin-bottom: 60px;
+        }
+
+        .contact-title {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary-black);
+        }
+
+        .contact-subtitle {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .contact-info {
+            max-width: 500px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--primary-black);
+        }
+
+        .email-section {
+            margin-top: 40px;
+        }
+
+        .email-item {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .email-item i {
+            color: var(--primary-blue);
+            font-size: 18px;
+            width: 24px;
+        }
+
+        .email-item a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .email-item a:hover {
+            color: var(--primary-blue);
+        }
+
+        .contact-action {
+            text-align: center;
+            padding: 60px;
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .contact-action h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary-black);
+        }
+
+        .contact-action p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Premium Footer with Icons */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            padding: 100px 0 40px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .footer-info {
+            max-width: 400px;
+        }
+
+        .footer-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-white);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--primary-white);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-white);
+        }
+
+        .footer-links i {
+            color: var(--primary-blue);
+            font-size: 14px;
+            width: 20px;
+        }
+
+        .contact-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .contact-icon:hover {
+            background: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 56px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .founder-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .founder-image {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+            }
+            
+            .contact-title {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .start-project-btn {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 160px 0 80px;
+            }
+            
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .section-header h2 {
+                font-size: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .contact-title {
+                font-size: 40px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .service-card, .project-card {
+                padding: 32px 24px;
+            }
+            
+            .founder-text h2 {
+                font-size: 36px;
+            }
+            
+            .contact-title {
+                font-size: 36px;
+            }
+            
+            .contact-action {
+                padding: 40px 24px;
+            }
+            
+            .footer-logo {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Header without Icons -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Logoogle</a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <a href="https://wa.me/8801615639722" class="start-project-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Start Project
+                </a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="brand-title">LOGOOGLE STUDIO</div>
+                <h1 class="hero-title">
+                    Logo & Brand
+                    <br>Identity Design
+                </h1>
+                <p class="hero-description">
+                    Crafting timeless, meaningful brand identities for modern businesses worldwide. Minimal Design. Maximum Impact.
+                </p>
+                <a href="#contact" class="cta-button">
+                    <i class="fas fa-rocket"></i>
+                    START A PROJECT
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Excellence in every pixel.</h2>
+                <p>Tailored design solutions meticulously crafted to capture your brand's unique essence and core values.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brush"></i>
+                    </div>
+                    <h3>Logo Design</h3>
+                    <p>Tailored design solutions meticulously crafted to capture your brand's unique essence and core values.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Brand Identity Design</h3>
+                    <p>Tailored design solutions meticulously crafted to capture your brand's unique essence and core values.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visual Branding</h3>
+                    <p>Tailored design solutions meticulously crafted to capture your brand's unique essence and core values.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3>Typography Logo</h3>
+                    <p>Tailored design solutions meticulously crafted to capture your brand's unique essence and core values.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-minimize"></i>
+                    </div>
+                    <h3>Minimalist Logo</h3>
+                    <p>Tailored design solutions meticulously crafted to capture your brand's unique essence and core values.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Branding</h3>
+                    <p>Tailored design solutions meticulously crafted to capture your brand's unique essence and core values.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Designing Brands That Last.</h2>
+                <p>A collection of identities crafted for ambitious brands worldwide.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        Lawlyfy
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Lawlyfy</h3>
+                        <p class="project-category">IP Law Firm</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        SpeedFast
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SpeedFast Courier</h3>
+                        <p class="project-category">Logistics</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        Electropla
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Electropla</h3>
+                        <p class="project-category">Electronics</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        Food Craft
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Food Craft</h3>
+                        <p class="project-category">Food Brand</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        Perfume Heritage
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Perfume Heritage</h3>
+                        <p class="project-category">Fragrance</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        Weblito
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weblito</h3>
+                        <p class="project-category">Software</p>
+                    </div>
+                </div>
+                <!-- 6 New Projects -->
+                <div class="project-card">
+                    <div class="project-image">
+                        Nova
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Nova</h3>
+                        <p class="project-category">Fashion Brand</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        Pigeon Soft
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Pigeon Soft</h3>
+                        <p class="project-category">Technology</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        Food Craft Snacks
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Food Craft Snacks</h3>
+                        <p class="project-category">FMOG Branding</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        Qatara Group
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Qatara Group</h3>
+                        <p class="project-category">Multi-Service</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        EcoGarden
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">EcoGarden</h3>
+                        <p class="project-category">Sustainability</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        MediCare+
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MediCare+</h3>
+                        <p class="project-category">Healthcare</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CMP Process Section -->
+    <section class="cmp-process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>CMP PROCESS</h2>
+                <p>Where Strategy Meets Design. A structured yet fluid approach to ensure every design is backed by logic and rebranding with your brand's soul.</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Research</h3>
+                            <p>Deep diving into your industry, audience, and competition.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Strategy</h3>
+                            <p>Defining the brand voice and positioning for success.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Concept</h3>
+                            <p>Exploring creative directions and visual metaphors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Design</h3>
+                            <p>Crafting the refined visual identity with precision.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Refinement</h3>
+                            <p>Polishing every detail based on strategic feedback.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>Delivery</h3>
+                            <p>Providing all assets and guidelines for launch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section" id="about">
+        <div class="container">
+            <div class="founder-content">
+                <div class="founder-image">
+                    <div class="founder-image-placeholder">
+                        MD. ALAMIN<br>
+                        Visionary Brand Architect
+                    </div>
+                </div>
+                <div class="founder-text">
+                    <h2>ABOUT THE FOUNDER<br>I'm MD.ALAMIN, a visionary brand architect.</h2>
+                    <p>As a professional logo and brand identity designer working with both international and national clients, I create clean, strategic, and memorable brand identities that help businesses stand out.</p>
+                    <p>My approach is rooted in simplicity and purpose. I believe that a great brand isn't just seen—it's felt. I bridge the gap between strategy and aesthetics to deliver results that last.</p>
+                    <div class="founder-signature">
+                        MD.AL AMIN
+                        <span>Founder of Logoogle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="contact-title">Let's Work Together</h2>
+                <p class="contact-subtitle">Ready to elevate your brand to the next level? We create brand identities that stand the test of time and make meaningful connections with your audience. Let's discuss how we can transform your vision into a powerful brand identity.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Get in touch with us through any of these channels. We typically respond within 24 hours.</p>
+                    
+                    <div class="email-section">
+                        <div class="email-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:itsmralamin@gmail.com">itsmralamin@gmail.com</a>
+                        </div>
+                        <div class="email-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:logoogle_@hotmail.com">logoogle_@hotmail.com</a>
+                        </div>
+                        <div class="email-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:logoogle_@outlook.com">logoogle_@outlook.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-action">
+                    <h3>Start Your Project</h3>
+                    <p>Begin your brand transformation journey today. Click below to connect with us on WhatsApp for a quick consultation.</p>
+                    <a href="https://wa.me/8801615639722" class="cta-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Start a Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer with Icons -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Logoogle</div>
+                    <p class="footer-description">Crafting timeless, meaningful brand identities for modern businesses worldwide. Minimal Design. Maximum Impact.</p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i><a href="#home">Home</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#portfolio">Portfolio</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#services">Services</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#process">Process</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#about">About</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i><a href="mailto:itsmralamin@gmail.com">itsmralamin@gmail.com</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:logoogle_@hotmail.com">logoogle_@hotmail.com</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:logoogle_@outlook.com">logoogle_@outlook.com</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:+8801615639722">+8801615639722</a></li>
+                    </ul>
+                    
+                    <div class="contact-icons">
+                        <a href="https://wa.me/8801615639722" class="contact-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Logoogle Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const headerNav = document.querySelector('header nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            headerNav.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = this.querySelector('i');
+            if (headerNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (headerNav.classList.contains('active')) {
+                    headerNav.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                if (this.classList.contains('start-project-btn') || this.classList.contains('cta-button')) return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.04)';
+            } else {
+                header.style.padding = '24px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+        
+        // Apply animation to elements
+        document.querySelectorAll('.service-card, .project-card, .process-step').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
