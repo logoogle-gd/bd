@@ -414,11 +414,12 @@ nav {
 }
 
 .founder-image {
-    width: 400px;
-    height: 500px;
+    width: 360px;
+    max-width: 100%;
+    height: atuo;
     background-color: var(--medium-gray);
     border-radius: var(--border-radius);
-    overflow: hidden;
+    overflow: visible;
     position: relative;
 }
 
