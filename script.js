@@ -16,7 +16,7 @@ const navLinks = document.querySelectorAll('nav a');
 const startProjectBtn = document.querySelector('.start-project-btn');
 
 // WhatsApp API URL (আপনার দেওয়া লিঙ্ক)
-const WHATSAPP_API_URL = 'https://api.whatsapp.com/send/?phone=';
+const WHATSAPP_API_URL = 'https://api.whatsapp.com/send/?phone=8801615639722&text&type=phone_number&app_absent=0';
 
 // ==================== CORE ORDER SYSTEM ====================
 
