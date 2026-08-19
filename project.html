@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Project | Logoogle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #3366FF;
+            --primary-purple: #663399;
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            --light-gray: #FAFAFA;
+            --medium-gray: #F0F0F0;
+            --dark-gray: #222222;
+            --text-dark: #111111;
+            --text-light: #666666;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --border-radius: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background-color: var(--primary-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; }
+
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background-color: var(--primary-white); padding: 22px 0; border-bottom: 1px solid var(--medium-gray);
+        }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 26px; font-weight: 800; color: var(--primary-black); }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px;
+            color: var(--text-dark); transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary-blue); transform: translateX(-3px); }
+
+        /* Hero */
+        .project-hero {
+            padding: 150px 0 60px;
+            background: linear-gradient(180deg, var(--light-gray) 0%, var(--primary-white) 100%);
+        }
+        .breadcrumb { color: var(--text-light); font-size: 14px; margin-bottom: 18px; }
+        .breadcrumb a { color: var(--text-light); }
+        .breadcrumb a:hover { color: var(--primary-blue); }
+        .project-hero h1 {
+            font-size: 52px; color: var(--primary-black); margin-bottom: 14px;
+            opacity: 0; transform: translateY(20px); animation: fadeUp 0.7s ease forwards 0.1s;
+        }
+        .project-hero .category-tag {
+            display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+            color: var(--primary-blue); background: rgba(51,102,255,0.08); padding: 8px 16px; border-radius: 30px;
+            opacity: 0; animation: fadeUp 0.7s ease forwards 0.25s;
+        }
+
+        .hero-media {
+            margin-top: 50px; border-radius: 16px; overflow: hidden; height: 460px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08); border: 1px solid var(--medium-gray);
+            opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
+        }
+        .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-media-placeholder {
+            width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+        }
+        .hero-media-placeholder i { font-size: 100px; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Details */
+        .project-details {
+            padding: 90px 0;
+        }
+        .details-grid {
+            display: grid; grid-template-columns: 2fr 1fr; gap: 70px; align-items: start;
+        }
+        .details-grid h2 { font-size: 30px; margin-bottom: 20px; }
+        .details-grid p { color: var(--text-light); font-size: 17px; }
+
+        .meta-card {
+            background: var(--light-gray); border: 1px solid var(--medium-gray); border-radius: 14px; padding: 32px;
+        }
+        .meta-row {
+            display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--medium-gray);
+        }
+        .meta-row:last-of-type { border-bottom: none; }
+        .meta-row span:first-child { color: var(--text-light); font-size: 14px; }
+        .meta-row span:last-child { font-weight: 700; font-size: 14px; text-align: right; max-width: 55%; }
+
+        .services-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+        .service-chip {
+            background: var(--primary-white); border: 1px solid var(--medium-gray); border-radius: 20px;
+            padding: 6px 14px; font-size: 13px; font-weight: 600;
+        }
+
+        .meta-cta {
+            display: block; text-align: center; margin-top: 28px; background: var(--primary-black); color: #fff;
+            padding: 14px; border-radius: var(--border-radius); font-weight: 600; transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .meta-cta:hover { background: var(--primary-blue); transform: translateY(-2px); }
+
+        /* Related */
+        .related-projects { padding: 60px 0 120px; background: var(--light-gray); }
+        .related-projects h2 { font-size: 30px; margin-bottom: 40px; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+        .related-card {
+            background: var(--primary-white); border-radius: var(--border-radius); overflow: hidden;
+            border: 1px solid var(--medium-gray); box-shadow: var(--card-shadow); transition: all 0.3s ease;
+        }
+        .related-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: var(--primary-blue); }
+        .related-media { height: 150px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .related-media img { width: 100%; height: 100%; object-fit: cover; }
+        .related-media i { font-size: 34px; }
+        .related-content { padding: 18px 20px; }
+        .related-content h4 { font-size: 16px; margin-bottom: 4px; }
+        .related-content span { font-size: 12px; color: var(--primary-blue); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        footer {
+            background: var(--primary-black); color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 14px;
+        }
+        footer a { color: #fff; }
+
+        @media (max-width: 900px) {
+            .details-grid { grid-template-columns: 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+            .project-hero h1 { font-size: 34px; }
+            .hero-media { height: 260px; }
+        }
+    </style>
+</head>
+<body>
+    <script src="projects-data.js"></script>
+
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Logoogle</a>
+            <a href="index.html#portfolio" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </header>
+
+    <main id="projectContent">
+        <!-- JS দিয়ে এখানে প্রজেক্টের বিস্তারিত বসবে -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Logoogle Studio. All rights reserved. | <a href="index.html#contact">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function getSlug() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('slug');
+        }
+
+        function mediaBlockHTML(project, sizeClass) {
+            if (project.image) {
+                return `<img src="${project.image}" alt="${project.title}">`;
+            }
+            return `<div class="${sizeClass}-placeholder" style="background: linear-gradient(135deg, ${project.color}22, ${project.color}08);">
+                        <i class="fas ${project.icon}" style="color:${project.color};"></i>
+                    </div>`;
+        }
+
+        function renderProject() {
+            const slug = getSlug();
+            const project = (typeof PROJECTS_DATA !== 'undefined') ? PROJECTS_DATA.find(p => p.slug === slug) : null;
+            const container = document.getElementById('projectContent');
+
+            if (!project) {
+                container.innerHTML = `
+                    <div class="container" style="padding:200px 0 120px; text-align:center;">
+                        <h1 style="font-size:32px; margin-bottom:16px;">Project Not Found</h1>
+                        <p style="color:var(--text-light); margin-bottom:30px;">দুঃখিত, এই প্রজেক্টটি খুঁজে পাওয়া যায়নি।</p>
+                        <a href="index.html#portfolio" style="display:inline-block; background:var(--primary-black); color:#fff; padding:14px 32px; border-radius:8px; font-weight:600;">Back to Portfolio</a>
+                    </div>`;
+                return;
+            }
+
+            document.title = `${project.title} | Logoogle`;
+            document.getElementById('pageTitle').textContent = `${project.title} | Logoogle`;
+
+            const heroMedia = project.image
+                ? `<img src="${project.image}" alt="${project.title}">`
+                : `<div class="hero-media-placeholder" style="background: linear-gradient(135deg, ${project.color}22, ${project.color}08);">
+                        <i class="fas ${project.icon}" style="color:${project.color};"></i>
+                   </div>`;
+
+            const servicesHTML = (project.services || []).map(s => `<span class="service-chip">${s}</span>`).join('');
+
+            const whatsappMsg = encodeURIComponent(
+                `Hi Logoogle! I saw the "${project.title}" project and I'm interested in a similar style logo/brand identity for my business. Could you share more details?`
+            );
+
+            container.innerHTML = `
+                <section class="project-hero">
+                    <div class="container">
+                        <p class="breadcrumb"><a href="index.html">Home</a> / <a href="index.html#portfolio">Portfolio</a> / ${project.title}</p>
+                        <span class="category-tag">${project.category}</span>
+                        <h1>${project.title}</h1>
+                        <div class="hero-media">${heroMedia}</div>
+                    </div>
+                </section>
+
+                <section class="project-details">
+                    <div class="container details-grid">
+                        <div>
+                            <h2>About This Project</h2>
+                            <p>${project.description}</p>
+                        </div>
+                        <div class="meta-card">
+                            <div class="meta-row"><span>Client</span><span>${project.client}</span></div>
+                            <div class="meta-row"><span>Category</span><span>${project.category}</span></div>
+                            <div class="meta-row"><span>Year</span><span>${project.year}</span></div>
+                            <div>
+                                <span style="color:var(--text-light); font-size:14px;">Services</span>
+                                <div class="services-list">${servicesHTML}</div>
+                            </div>
+                            <a href="https://wa.me/8801615639722?text=${whatsappMsg}" target="_blank" class="meta-cta">
+                                <i class="fab fa-whatsapp"></i>&nbsp; Order a Similar Design
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="related-projects">
+                    <div class="container">
+                        <h2>More Projects</h2>
+                        <div class="related-grid" id="relatedGrid"></div>
+                    </div>
+                </section>
+            `;
+
+            renderRelated(project);
+        }
+
+        function renderRelated(current) {
+            const grid = document.getElementById('relatedGrid');
+            if (!grid || typeof PROJECTS_DATA === 'undefined') return;
+
+            const others = PROJECTS_DATA.filter(p => p.slug !== current.slug).slice(0, 3);
+            grid.innerHTML = others.map(p => `
+                <a href="project.html?slug=${encodeURIComponent(p.slug)}" class="related-card">
+                    <div class="related-media" style="background: ${p.image ? 'var(--light-gray)' : `linear-gradient(135deg, ${p.color}22, ${p.color}08)`};">
+                        ${mediaBlockHTML(p, 'related-media')}
+                    </div>
+                    <div class="related-content">
+                        <h4>${p.title}</h4>
+                        <span>${p.category}</span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        renderProject();
+    </script>
+</body>
+</html>
 
