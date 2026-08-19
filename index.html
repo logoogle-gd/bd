@@ -311,7 +311,13 @@
             border-color: var(--primary-blue);
         }
 
+        .project-image-link {
+            display: block;
+            text-decoration: none;
+        }
+
         .project-image {
+            position: relative;
             height: 180px;
             background-color: var(--light-gray);
             display: flex;
@@ -322,6 +328,68 @@
             font-weight: 700;
             color: var(--primary-black);
             border-bottom: 1px solid var(--medium-gray);
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.08);
+        }
+
+        .project-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-placeholder i {
+            font-size: 42px;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-placeholder i {
+            transform: scale(1.15) rotate(-4deg);
+        }
+
+        .project-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-view-btn {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-view-btn {
+            transform: translateY(0);
         }
 
         .project-content {
@@ -341,6 +409,83 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .project-more-link {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-black);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.25s ease, color 0.25s ease;
+        }
+
+        .project-more-link i {
+            font-size: 12px;
+            transition: transform 0.25s ease;
+        }
+
+        .project-more-link:hover {
+            color: var(--primary-blue);
+            gap: 10px;
+        }
+
+        .project-more-link:hover i {
+            transform: translateX(2px);
+        }
+
+        .load-more-wrap {
+            text-align: center;
+            margin-top: 56px;
+        }
+
+        .load-more-btn {
+            background-color: transparent;
+            color: var(--primary-black);
+            border: 1.5px solid var(--primary-black);
+            padding: 14px 34px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'Manrope', sans-serif;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .load-more-btn:hover {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .load-more-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .load-more-btn:hover i {
+            transform: translateY(2px);
+        }
+
+        /* Reveal-on-render animation for dynamically injected project cards */
+        .reveal-init {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .reveal-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         /* CMP Process Section */
@@ -825,9 +970,63 @@
                 font-size: 28px;
             }
         }
+
+        /* ==================== Added: Hero entrance + scroll reveal + micro-interactions ==================== */
+        .hero .brand-title {
+            opacity: 0; transform: translateY(16px); animation: heroFadeUp 0.7s ease forwards 0.1s;
+        }
+        .hero .hero-title {
+            opacity: 0; transform: translateY(20px); animation: heroFadeUp 0.7s ease forwards 0.25s;
+        }
+        .hero .hero-description {
+            opacity: 0; transform: translateY(20px); animation: heroFadeUp 0.7s ease forwards 0.4s;
+        }
+        .hero .cta-button {
+            opacity: 0; transform: translateY(20px); animation: heroFadeUp 0.7s ease forwards 0.55s;
+        }
+
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Generic scroll-reveal utility, applied by JS to key sections */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Subtle button press feedback across the site */
+        .cta-button, .start-project-btn, .submit-order-btn, .submit-feedback-btn, .load-more-btn {
+            position: relative;
+        }
+        .cta-button:active, .start-project-btn:active, .submit-order-btn:active,
+        .submit-feedback-btn:active, .load-more-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Simple page preloader */
+        #pagePreloader {
+            position: fixed; inset: 0; background: var(--primary-white); z-index: 9999;
+            display: flex; align-items: center; justify-content: center;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        #pagePreloader.hide { opacity: 0; visibility: hidden; }
+        .preloader-spinner {
+            width: 42px; height: 42px; border: 3px solid var(--medium-gray);
+            border-top-color: var(--primary-blue); border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
+    <div id="pagePreloader"><div class="preloader-spinner"></div></div>
+    <script src="projects-data.js"></script>
     <!-- Professional Header without Icons -->
     <header>
         <div class="container header-container">
@@ -938,117 +1137,15 @@
                 <p>A collection of identities crafted for ambitious brands worldwide.</p>
             </div>
             
-            <div class="projects-grid">
-    <div class="project-card">
-        <div class="project-image">
-            <img src="Dunn-Ranch.jpg" alt="Flydeal Travel Agency">
-        </div>
-        <div class="project-content">
-            <h3 class="project-title">FLYDEAL</h3>
-            <p class="project-category">Travel Agency</p>
-        </div>
-          </div>
-             
-                <div class="project-card">
-                    <div class="project-image">
-                        SpeedFast
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">SpeedFast Courier</h3>
-                        <p class="project-category">Logistics</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        Electropla
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Electropla</h3>
-                        <p class="project-category">Electronics</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        Food Craft
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Food Craft</h3>
-                        <p class="project-category">Food Brand</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        Perfume Heritage
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Perfume Heritage</h3>
-                        <p class="project-category">Fragrance</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        Weblito
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Weblito</h3>
-                        <p class="project-category">Software</p>
-                    </div>
-                </div>
-                <!-- 6 New Projects -->
-                <div class="project-card">
-                    <div class="project-image">
-                        Nova
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Nova</h3>
-                        <p class="project-category">Fashion Brand</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        Pigeon Soft
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Pigeon Soft</h3>
-                        <p class="project-category">Technology</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        Food Craft Snacks
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Food Craft Snacks</h3>
-                        <p class="project-category">FMOG Branding</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        Qatara Group
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Qatara Group</h3>
-                        <p class="project-category">Multi-Service</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        EcoGarden
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">EcoGarden</h3>
-                        <p class="project-category">Sustainability</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        MediCare+
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MediCare+</h3>
-                        <p class="project-category">Healthcare</p>
-                    </div>
-                </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- প্রজেক্ট কার্ডগুলো projects-data.js থেকে স্বয়ংক্রিয়ভাবে তৈরি হয় -->
+            </div>
+
+            <div class="load-more-wrap">
+                <button type="button" id="loadMoreProjectsBtn" class="load-more-btn">
+                    <span>More Projects</span>
+                    <i class="fas fa-arrow-down"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -2868,6 +2965,66 @@
 </style>
 
 <script>
+    /* ==================== PROJECTS GRID (data-driven) ==================== */
+    const projectsGrid = document.getElementById('projectsGrid');
+    const loadMoreBtn = document.getElementById('loadMoreProjectsBtn');
+    const INITIAL_PROJECT_COUNT = 6;
+
+    function projectCardHTML(project, index) {
+        const mediaHTML = project.image
+            ? `<img src="${project.image}" alt="${project.title}" loading="lazy">`
+            : `<div class="project-placeholder" style="background: linear-gradient(135deg, ${project.color}22, ${project.color}08);">
+                    <i class="fas ${project.icon}" style="color:${project.color};"></i>
+               </div>`;
+
+        return `
+            <div class="project-card" style="transition-delay:${(index % INITIAL_PROJECT_COUNT) * 60}ms;">
+                <a href="project.html?slug=${encodeURIComponent(project.slug)}" class="project-image-link">
+                    <div class="project-image">
+                        ${mediaHTML}
+                        <div class="project-overlay">
+                            <span class="project-view-btn"><i class="fas fa-eye"></i> View Details</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="project-content">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-category">${project.category}</p>
+                    <a href="project.html?slug=${encodeURIComponent(project.slug)}" class="project-more-link">
+                        More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>`;
+    }
+
+    function renderProjects(count) {
+        if (!projectsGrid || typeof PROJECTS_DATA === 'undefined') return;
+        const visible = PROJECTS_DATA.slice(0, count);
+        projectsGrid.innerHTML = visible.map(projectCardHTML).join('');
+
+        // Animate newly rendered cards in
+        requestAnimationFrame(() => {
+            document.querySelectorAll('#projectsGrid .project-card').forEach(card => {
+                card.classList.add('reveal-init');
+                requestAnimationFrame(() => card.classList.add('reveal-in'));
+            });
+        });
+
+        if (loadMoreBtn) {
+            loadMoreBtn.style.display = count >= PROJECTS_DATA.length ? 'none' : 'inline-flex';
+        }
+    }
+
+    let visibleProjectCount = INITIAL_PROJECT_COUNT;
+    renderProjects(visibleProjectCount);
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            visibleProjectCount += 6;
+            renderProjects(visibleProjectCount);
+        });
+    }
+
     // Multi-step form navigation
     const formSteps = document.querySelectorAll('.form-step');
     const stepperSteps = document.querySelectorAll('.step');
@@ -3005,76 +3162,64 @@
         // Show loading state
         const submitBtn = this.querySelector('.submit-order-btn');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg> Processing...';
+        submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg> Sending to WhatsApp...';
         submitBtn.disabled = true;
-        
+
+        // ✅ WhatsApp number that receives every order (as an SMS-style WhatsApp message)
+        const STUDIO_WHATSAPP_NUMBER = '8801615639722';
+
         try {
-            // Send email using EmailJS (You need to set up your EmailJS account)
-            // This is a simulated email sending for demo purposes
-            const YOUR_GMAIL = "your-email@gmail.com"; // Replace with your actual email
-            const emailSubject = `New Logo Order: ${formData.brandName}`;
-            const emailBody = `
-Logo Order Details:
--------------------
-Brand Name: ${formData.brandName}
-Company Type: ${formData.companyType}
-Contact Email: ${formData.email}
-Phone: ${formData.phone}
-Logo Type: ${formData.logoType}
-Logo Style: ${formData.logoStyle}
-Color Preferences: ${formData.colorPreferences.join(', ')}
-Typography: ${formData.typography}
+            const orderId = 'LOG-' + Date.now().toString().slice(-8);
+            const orderDate = new Date().toLocaleString('en-BD', { timeZone: 'Asia/Dhaka' });
 
-Company Description:
-${formData.companyDescription}
+            // Build a clean, SMS-style message with all order details
+            const message =
+`🆕 NEW LOGO ORDER — LOGOOGLE STUDIO
 
-Additional Notes:
+Order ID: ${orderId}
+Date: ${orderDate}
+
+👤 Brand Name: ${formData.brandName}
+🏢 Company Type: ${formData.companyType}
+📧 Email: ${formData.email}
+📞 Phone: ${formData.phone || 'Not provided'}
+
+🎨 Logo Type: ${formData.logoType || 'Not selected'}
+🎨 Logo Style: ${formData.logoStyle || 'Not selected'}
+🎨 Color Preferences: ${(formData.colorPreferences && formData.colorPreferences.length) ? formData.colorPreferences.join(', ') : 'Not specified'}
+🔤 Typography: ${formData.typography || 'Not specified'}
+
+📝 Company Description:
+${formData.companyDescription || 'N/A'}
+
+📌 Additional Notes:
 ${formData.additionalNotes || 'None'}
 
-Order Date: ${new Date().toLocaleString()}
-            `;
-            
-            // Simulate email sending (in real app, use EmailJS or similar service)
-            console.log('Email would be sent to:', YOUR_GMAIL);
-            console.log('Subject:', emailSubject);
-            console.log('Body:', emailBody);
-            
-            // Simulate API delay
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            // Show success notification
-            showNotification('Order submitted successfully! We\'ll contact you soon.', 'success');
-            
-            // Reset form
-            this.reset();
-            currentStep = 1;
-            showStep(currentStep);
-            updateStepper();
-            
-            // Send confirmation email to client (simulated)
-            const clientEmailBody = `
-Thank you for your logo order!
+— Sent automatically from the Logoogle website order form.`;
 
-Order Summary:
-- Brand: ${formData.brandName}
-- Logo Type: ${formData.logoType}
-- Style: ${formData.logoStyle}
+            const whatsappUrl = `https://api.whatsapp.com/send/?phone=${STUDIO_WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
 
-We'll review your requirements and contact you within 24 hours to discuss the project timeline and next steps.
+            // Open WhatsApp with the pre-filled order message — the user just taps "Send"
+            window.open(whatsappUrl, '_blank');
 
-Best regards,
-Logo Design Studio Team
-            `;
-            
-            console.log('Confirmation email would be sent to:', formData.email);
-            console.log('Confirmation email body:', clientEmailBody);
-            
+            showNotification('Order ready! Please tap "Send" in the WhatsApp tab to confirm.', 'success');
+
+            // Reset form after a short delay so the WhatsApp tab has time to open
+            setTimeout(() => {
+                this.reset();
+                currentStep = 1;
+                showStep(currentStep);
+                updateStepper();
+            }, 1200);
+
         } catch (error) {
-            showNotification('Error submitting order. Please try again.', 'error');
+            showNotification('Error preparing your order. Please try again.', 'error');
             console.error('Order submission error:', error);
         } finally {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1200);
         }
     });
     
@@ -3361,12 +3506,37 @@ Received: ${new Date().toLocaleString()}
             });
         }, observerOptions);
         
-        // Apply animation to elements
-        document.querySelectorAll('.service-card, .project-card, .process-step').forEach(item => {
+        // Apply animation to elements (project-card handled separately by its own reveal system)
+        document.querySelectorAll('.service-card, .process-step').forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
             item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(item);
+        });
+
+        // Broader scroll-reveal for section headers and key content blocks
+        const revealTargets = document.querySelectorAll(
+            '.section-header, .founder-content, .contact-content, .premium-header, .load-more-wrap'
+        );
+        revealTargets.forEach(el => el.classList.add('reveal-on-scroll'));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+        revealTargets.forEach(el => revealObserver.observe(el));
+
+        // Hide preloader once everything is ready
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('pagePreloader');
+            if (preloader) {
+                setTimeout(() => preloader.classList.add('hide'), 250);
+            }
         });
     </script>
 </body>
