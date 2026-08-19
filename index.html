@@ -292,7 +292,10 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 32px 32px;
+            row-gap: 46px;
+            perspective: 1600px;
+            padding: 10px 4px 24px;
         }
 
         .project-card {
@@ -300,14 +303,21 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
             height: 320px;
             border: 1px solid var(--medium-gray);
+            position: relative;
+            z-index: 1;
+            transform-style: preserve-3d;
+            will-change: transform;
+            transform: translateY(var(--rise, 0px)) rotate(var(--rot, 0deg));
+            transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.35s ease,
+                        border-color 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            z-index: 5;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
             border-color: var(--primary-blue);
         }
 
@@ -336,9 +346,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            animation: projFloat var(--fdur, 5.5s) ease-in-out infinite;
+            animation-delay: var(--fdelay, 0s);
         }
 
         .project-card:hover .project-image img {
+            animation: none;
             transform: scale(1.08);
         }
 
@@ -353,10 +366,18 @@
         .project-placeholder i {
             font-size: 42px;
             transition: transform 0.4s ease;
+            animation: projFloat var(--fdur, 5.5s) ease-in-out infinite;
+            animation-delay: var(--fdelay, 0s);
         }
 
         .project-card:hover .project-placeholder i {
+            animation: none;
             transform: scale(1.15) rotate(-4deg);
+        }
+
+        @keyframes projFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-8px) scale(1.018); }
         }
 
         .project-overlay {
@@ -479,13 +500,32 @@
         /* Reveal-on-render animation for dynamically injected project cards */
         .reveal-init {
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateY(56px) scale(0.93) rotate(0deg);
+            filter: blur(6px);
         }
 
         .reveal-in {
             opacity: 1 !important;
-            transform: translateY(0) !important;
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(var(--rise, 0px)) scale(1) rotate(var(--rot, 0deg)) !important;
+            filter: blur(0) !important;
+            transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+                        filter 0.75s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .project-image img,
+            .project-placeholder i {
+                animation: none !important;
+            }
+            .project-card {
+                transition: opacity 0.3s ease !important;
+                transform: none !important;
+            }
+            .reveal-init, .reveal-in {
+                transform: none !important;
+                filter: none !important;
+            }
         }
 
         /* CMP Process Section */
@@ -865,6 +905,7 @@
             
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
+                row-gap: 40px;
             }
             
             .founder-content {
@@ -920,6 +961,13 @@
             
             .projects-grid {
                 grid-template-columns: 1fr;
+                row-gap: 32px;
+                perspective: none;
+            }
+
+            .project-card {
+                --rise: 0px !important;
+                --rot: 0deg !important;
             }
             
             .process-steps {
@@ -2970,6 +3018,16 @@
     const loadMoreBtn = document.getElementById('loadMoreProjectsBtn');
     const INITIAL_PROJECT_COUNT = 6;
 
+    // Deterministic per-card "layer" values so the grid reads as loosely
+    // scattered/stacked photo layers rather than a rigid, uniform grid.
+    function layerVars(index) {
+        const rot = (Math.sin(index * 12.9898) * 2.2).toFixed(2);
+        const rise = (Math.cos(index * 7.233) * 16).toFixed(1);
+        const fdur = (4.6 + (index % 5) * 0.35).toFixed(2);
+        const fdelay = ((index % 4) * 0.4).toFixed(2);
+        return { rot, rise, fdur, fdelay };
+    }
+
     function projectCardHTML(project, index) {
         const mediaHTML = project.image
             ? `<img src="${project.image}" alt="${project.title}" loading="lazy">`
@@ -2977,8 +3035,11 @@
                     <i class="fas ${project.icon}" style="color:${project.color};"></i>
                </div>`;
 
+        const { rot, rise, fdur, fdelay } = layerVars(index);
+        const cardStyle = `--rot:${rot}deg; --rise:${rise}px; --fdur:${fdur}s; --fdelay:${fdelay}s; transition-delay:${(index % INITIAL_PROJECT_COUNT) * 60}ms;`;
+
         return `
-            <div class="project-card" style="transition-delay:${(index % INITIAL_PROJECT_COUNT) * 60}ms;">
+            <div class="project-card" style="${cardStyle}">
                 <a href="project.html?slug=${encodeURIComponent(project.slug)}" class="project-image-link">
                     <div class="project-image">
                         ${mediaHTML}
@@ -3022,6 +3083,37 @@
         loadMoreBtn.addEventListener('click', () => {
             visibleProjectCount += 6;
             renderProjects(visibleProjectCount);
+        });
+    }
+
+    /* ---- Layered gallery: pointer-follow 3D tilt ----
+       Cards rest in their scattered "layer" position (--rot / --rise).
+       On hover, the specific card lifts to the front, straightens, and
+       tilts gently toward the cursor; it eases back to its resting
+       layer position the moment the pointer leaves. */
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (projectsGrid && !prefersReducedMotion) {
+        projectsGrid.addEventListener('pointermove', (e) => {
+            if (e.pointerType === 'touch') return;
+            const card = e.target.closest('.project-card');
+            if (!card) return;
+
+            const rect = card.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width;
+            const py = (e.clientY - rect.top) / rect.height;
+            const rotateY = (px - 0.5) * 12;
+            const rotateX = (0.5 - py) * 12;
+
+            card.style.transform = `translateY(-14px) scale(1.02) perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+        });
+
+        projectsGrid.addEventListener('pointerout', (e) => {
+            if (e.pointerType === 'touch') return;
+            const card = e.target.closest('.project-card');
+            if (!card) return;
+            if (card.contains(e.relatedTarget)) return;
+            card.style.transform = '';
         });
     }
 
