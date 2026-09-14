@@ -1,0 +1,631 @@
+          <span class="num bg-coral">06</span>
+          <h3 style="margin:16px 0 0;font-size:18px">Corporate Branding</h3>
+          <p class="muted" style="margin:8px 0 0;font-size:14px;line-height:1.6">Scalable guidelines that keep large teams perfectly on-brand.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     SECTION 06: PORTFOLIO / PROJECTS
+     EACH PROJECT IS EDITABLE BELOW.
+     Change the image src, title, type and year directly in HTML.
+     ========================================================= -->
+    <section id="portfolio" class="section-tight">
+      <div class="reveal">
+        <h2>Designing brands that last.</h2>
+        <p class="lead muted">28 logo identities crafted for ambitious brands worldwide. Explore 28 projects. Each project image is a separate editable SVG file in assets/project-logos/.</p>
+      </div>
+
+      <div id="portfolio-grid" class="portfolio-grid">
+        <!-- =====================================================
+             PROJECT 01: Dunn Ranch
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/01-dunn.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Dunn Ranch" type="button">
+          <div class="project-image-wrap bg-sun">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/01-dunn.svg" alt="Dunn Ranch brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Dunn Ranch</span>
+              <span class="project-year">2024</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sun">Combination Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 02: Flydeal
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/02-flydeal.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Flydeal" type="button">
+          <div class="project-image-wrap bg-sky">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/02-flydeal.svg" alt="Flydeal brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Flydeal</span>
+              <span class="project-year">2024</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sky">Letter Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 03: Shamforeng
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/03-northwind.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Shamforeng" type="button">
+          <div class="project-image-wrap bg-mint">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/03-northwind.svg" alt="Shamforeng brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Shamforeng</span>
+              <span class="project-year">2023</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-mint">Wordmark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 04: Cobalt Coffee
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/04-cobalt.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Cobalt Coffee" type="button">
+          <div class="project-image-wrap bg-coral">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/04-cobalt.svg" alt="Cobalt Coffee brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Cobalt Coffee</span>
+              <span class="project-year">2025</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-coral">Emblem</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 05: Verra
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/05-verra.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Verra" type="button">
+          <div class="project-image-wrap bg-violet">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/05-verra.svg" alt="Verra brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Verra</span>
+              <span class="project-year">2025</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-violet">Abstract Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 06: Studio 9
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/06-studio9.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Studio 9" type="button">
+          <div class="project-image-wrap bg-sun">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/06-studio9.svg" alt="Studio 9 brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Studio 9</span>
+              <span class="project-year">2023</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sun">Typography Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 07: Bloom Skin
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/07-bloom.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Bloom Skin" type="button">
+          <div class="project-image-wrap bg-pink">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/07-bloom.svg" alt="Bloom Skin brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Bloom Skin</span>
+              <span class="project-year">2025</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-pink">Minimalist Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 08: Pulse Sports
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/08-pulse.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Pulse Sports" type="button">
+          <div class="project-image-wrap bg-sky">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/08-pulse.svg" alt="Pulse Sports brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Pulse Sports</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sky">Letter Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 09: Saffron Table
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/09-saffron.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Saffron Table" type="button">
+          <div class="project-image-wrap bg-coral">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/09-saffron.svg" alt="Saffron Table brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Saffron Table</span>
+              <span class="project-year">2024</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-coral">Script Wordmark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 10: Kiddo Learn
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/10-kiddo.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Kiddo Learn" type="button">
+          <div class="project-image-wrap bg-mint">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/10-kiddo.svg" alt="Kiddo Learn brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Kiddo Learn</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-mint">Mascot Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 11: Atlas Ventures
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/11-atlas.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Atlas Ventures" type="button">
+          <div class="project-image-wrap bg-violet">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/11-atlas.svg" alt="Atlas Ventures brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Atlas Ventures</span>
+              <span class="project-year">2025</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-violet">Abstract Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 12: Ember Goods
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/12-ember.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Ember Goods" type="button">
+          <div class="project-image-wrap bg-coral">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/12-ember.svg" alt="Ember Goods brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Ember Goods</span>
+              <span class="project-year">2025</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-coral">Wordmark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 13: Lumen Skin
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/13-lumen.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Lumen Skin" type="button">
+          <div class="project-image-wrap bg-pink">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/13-lumen.svg" alt="Lumen Skin brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Lumen Skin</span>
+              <span class="project-year">2025</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-pink">Typography Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 14: Terra FC
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/14-terra.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Terra FC" type="button">
+          <div class="project-image-wrap bg-mint">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/14-terra.svg" alt="Terra FC brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Terra FC</span>
+              <span class="project-year">2024</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-mint">Emblem Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 15: Quanta Pay
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/15-quanta.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Quanta Pay" type="button">
+          <div class="project-image-wrap bg-sky">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/15-quanta.svg" alt="Quanta Pay brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Quanta Pay</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sky">Letter Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 16: Mellow Bakes
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/16-mellow.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Mellow Bakes" type="button">
+          <div class="project-image-wrap bg-sun">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/16-mellow.svg" alt="Mellow Bakes brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Mellow Bakes</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sun">Mascot Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 17: Nexora
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/17-nimbus.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Nexora" type="button">
+          <div class="project-image-wrap bg-violet">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/17-nimbus.svg" alt="Nexora brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Nexora</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-violet">Letter Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 18: Oak & Ember
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/18-roast.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Oak &amp; Ember" type="button">
+          <div class="project-image-wrap bg-sun">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/18-roast.svg" alt="Oak &amp; Ember brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Oak &amp; Ember</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sun">Wordmark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 19: Friendly Fox
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/19-fox.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Friendly Fox" type="button">
+          <div class="project-image-wrap bg-sky">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/19-fox.svg" alt="Friendly Fox brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Friendly Fox</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sky">Mascot Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 20: Greenhaven
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/20-veda.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Greenhaven" type="button">
+          <div class="project-image-wrap bg-mint">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/20-veda.svg" alt="Greenhaven brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Greenhaven</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-mint">Emblem Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 21: NovaGrid
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/21-nova.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="NovaGrid" type="button">
+          <div class="project-image-wrap bg-violet">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/21-nova.svg" alt="NovaGrid brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">NovaGrid</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-violet">Abstract Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 22: Aura House
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/22-aura.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Aura House" type="button">
+          <div class="project-image-wrap bg-pink">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/22-aura.svg" alt="Aura House brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Aura House</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-pink">Wordmark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 23: Vertex Labs
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/23-vertex.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Vertex Labs" type="button">
+          <div class="project-image-wrap bg-sky">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/23-vertex.svg" alt="Vertex Labs brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Vertex Labs</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sky">Letter Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 24: Harvest & Co.
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/24-harvest.svg
+             ===================================================== -->
+        <button class="project-card lift reveal" data-project="Harvest &amp; Co." type="button">
+          <div class="project-image-wrap bg-sun">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/24-harvest.svg" alt="Harvest &amp; Co. brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Harvest &amp; Co.</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-sun">Combination Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 25: Summit Club
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/25-summit.svg
+             ===================================================== -->
+        <button class="project-card lift reveal project-hidden" data-project="Summit Club" type="button">
+          <div class="project-image-wrap bg-mint">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/25-summit.svg" alt="Summit Club brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Summit Club</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-mint">Emblem Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 26: Orbit Pay
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/26-orbit.svg
+             ===================================================== -->
+        <button class="project-card lift reveal project-hidden" data-project="Orbit Pay" type="button">
+          <div class="project-image-wrap bg-coral">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/26-orbit.svg" alt="Orbit Pay brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Orbit Pay</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-coral">Minimalist Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 27: Kindred Studio
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/27-kindred.svg
+             ===================================================== -->
+        <button class="project-card lift reveal project-hidden" data-project="Kindred Studio" type="button">
+          <div class="project-image-wrap bg-pink">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/27-kindred.svg" alt="Kindred Studio brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Kindred Studio</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-pink">Typography Logo</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+        <!-- =====================================================
+             PROJECT 28: Zenith One
+             To change this project: edit image src, title, type or year.
+             Image file: assets/project-logos/28-zenith.svg
+             ===================================================== -->
+        <button class="project-card lift reveal project-hidden" data-project="Zenith One" type="button">
+          <div class="project-image-wrap bg-violet">
+            <!-- EDIT PROJECT IMAGE HERE -->
+            <img class="project-image" src="assets/project-logos/28-zenith.svg" alt="Zenith One brand identity project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-title">Zenith One</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-bottom" style="margin-top:8px">
+              <span class="tag bg-violet">Combination Mark</span>
+              <span class="view">View details →</span>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div class="more-wrap">
+        <button id="more-projects" class="btn-secondary">More projects (4)</button>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     SECTION 07: ORDER FORM
+     Logo type, package, references and client brief.
+     ========================================================= -->
+    <section id="order" class="section-tight">
+      <div class="order-shell">
+        <div class="reveal">
+          <h2>Order your logo</h2>
+          <p class="lead muted">Choose a logo type, pick a package, and tell me about your brand. Reply within 24 hours, guaranteed.</p>
+        </div>
+
+        <h3 class="step-title">1. Pick a logo type</h3>
+        <div id="type-grid" class="type-grid">
+        <button type="button" class="type-card lift selected" data-type="Letter Mark">
+          <span class="type-icon bg-sky">A</span>
+          <span class="type-name">Letter Mark</span>
+          <span class="type-copy">Monogram built from your initials — sharp, compact, memorable.</span>
